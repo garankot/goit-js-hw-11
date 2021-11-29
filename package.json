@@ -1,14 +1,20 @@
 {
   "name": "goit-js-hw-11",
   "source": "src/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",  
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "main": "index.js",
-  "homepage": "https://garankot.github.io/goit-js-hw-11",  
+    "homepage": "https://garankot.github.io/goit-js-hw-11",
     "start": "parcel",
     "build": "parcel build"
   },
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "lodash.throttle": "^4.1.1",
+    "notiflix": "^3.2.2",
+    "simplelightbox": "^2.10.1"
   }
 }
