@@ -1,15 +1,24 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-const key = "24575119-5e4efe416bc752fe5d4bb361b"
-async function fetchIMG(name) {
+const options = {
+    key: "24575119-5e4efe416bc752fe5d4bb361b",
+    q: document.querySelector['#search-form'],
+    image_type: "photo",
+    orientation: 'horizontal',
+    safesearch: true,
+}
+
+
+async function fetchIMG() {
     
   const response = await fetch(
-        `https://pixabay.com/api/?$key=${key}&q=yellow+flowers&image_type=photo`);
+        `https://pixabay.com/api/?${options}`);
     if (!response.ok) {
         if (response.status === 404) {
             Notify.failure('Oops, there is no country with that name');
         }
         throw new Error(response.statusText);
     }
+    console.log(response.json())
     return await response.json();
 }
 
