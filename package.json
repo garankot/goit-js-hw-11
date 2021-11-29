@@ -1,0 +1,14 @@
+{
+  "name": "test_parcell2",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",  
+  "scripts": {
+    "main": "index.js",
+  "homepage": "https://garankot.github.io/test_parcell2",  
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
