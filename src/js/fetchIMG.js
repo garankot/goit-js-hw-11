@@ -7,12 +7,12 @@ const options = {
     safesearch: true,
 }
 
-
-async function fetchIMG() {
+async function getUser() {
     
-  const response = await fetch(
-        `https://pixabay.com/api/?${options}`);
-    if (!response.ok) {
+    try {
+      const response = await axios.get('/user?ID=12345');
+      console.log(response);
+      if (!response.ok) {
         if (response.status === 404) {
             Notify.failure('Oops, there is no country with that name');
         }
@@ -20,6 +20,24 @@ async function fetchIMG() {
     }
     console.log(response.json())
     return await response.json();
-}
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
+// async function fetchIMG() {
+    
+//   const response = await fetch(
+//         `https://pixabay.com/api/?${options}`);
+//     if (!response.ok) {
+//         if (response.status === 404) {
+//             Notify.failure('Oops, there is no country with that name');
+//         }
+//         throw new Error(response.statusText);
+//     }
+//     console.log(response.json())
+//     return await response.json();
+// }
 
 export default { fetchIMG };
